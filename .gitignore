@@ -1,2 +1,4 @@
 *.o
 llrec-test
+stack
+hw3_tests*

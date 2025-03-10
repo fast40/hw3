@@ -4,6 +4,8 @@
 #define NULL 0
 #endif
 
+#include <iostream>
+
 /**
  * Node struct for both problems
  */
@@ -80,11 +82,18 @@ Node* llfilter(Node* head, Comp pred);
 template <typename Comp>
 Node* llfilter(Node* head, Comp pred)
 {
-    //*********************************************
-    // Provide your implementation below
-    //*********************************************
-
-
+        if (head == NULL) {
+                return NULL;
+        }
+        else if (pred(head->val)) {
+                Node* next = head->next;
+                delete head;
+                return llfilter(next, pred);
+        }
+        else {
+                head->next = llfilter(head->next, pred);
+                return head;
+        }
 }
 
 #endif
