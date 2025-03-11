@@ -4,8 +4,6 @@
 #define NULL 0
 #endif
 
-#include <iostream>
-
 /**
  * Node struct ___ both problems
  */
